@@ -1,7 +1,13 @@
+/* Tailwind base styles and Google Fonts import */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*
+  Global box-sizing and font-family reset for consistency across browsers.
+  All elements use Poppins font and have no default margin or padding.
+*/
 * {
   margin: 0;
   padding: 0;
@@ -9,50 +15,180 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Remove underline from all anchor tags */
 a {
   text-decoration: none;
-
 }
 
+/*
+  Header styles:
+  - Flex container for logo and navigation bar
+  - Space between logo and navbar
+  - Responsive horizontal padding using vw units
+  - White background for header
+*/
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 10%;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
+  align-items: center;      
+  justify-content: space-between; 
+  padding: 1rem 6vw; 
+  background-color: white;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: (130, 77, 77);
+/*
+  Logo image styles:
+  - Responsive height using vw
+  - Max/min height to ensure logo is never too large or too small
+  - Maintains aspect ratio
+*/
+.logo img {
+  height: 8vw;  
+  max-height: 120px; 
+  min-height: 40px; 
+  width: auto;
+  display: block;
 }
-.navbar a{
-  position: relative;
+
+/* Prevent logo from shrinking in flex layout */
+.logo {
+  flex-shrink: 0;
+}
+
+/*
+  Navbar styles:
+  - Horizontal flex layout for links
+  - Centered alignment and spacing between links
+*/
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*
+  Navbar link styles:
+  - Green color, larger font
+  - Padding for clickable area
+  - Relative positioning for pseudo-elements
+*/
+.navbar a {
   font-size: 18px;
   color: green;
-  margin: 25px;
+  padding: 0 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.navbar a::before {
+/*
+  Vertical green separator between navbar links (except first link)
+  Uses ::before pseudo-element
+*/
+.navbar a + a::before {
   content: '';
   position: absolute;
-  top: 100%;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 24px;
+  background: green;
+  border-radius: 1px;
+}
+
+/*
+  Underline animation for navbar links on hover
+  Uses ::after pseudo-element
+*/
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
   background-color: green;
-  bottom: -5px;
-  left: 0;
-  transition: .3s;
+  transition: width 0.3s;
 }
 
-.navbar a:hover::before {
+.navbar a:hover::after {
   width: 100%;
+}
+
+/*
+  Ensures the '|' separators in the navbar are green
+  (for cases where <span> is used as a separator)
+*/
+.navbar span {
+  color: green;
+}
+
+/*
+  Responsive styles for tablets (≤1024px):
+  - Reduce header padding
+  - Adjust logo and link sizes
+*/
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 2vw;
+  }
+  .logo img {
+    height: 12vw;
+    max-height: 90px;
+  }
+  .navbar a {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+/*
+  Responsive styles for mobile (≤768px):
+  - Stack header vertically
+  - Logo and navbar shrink
+  - Navbar becomes vertical
+  - Hide vertical separators
+*/
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 2vw;
+  }
+  .logo img {
+    height: 16vw;
+    max-height: 70px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .navbar a {
+    font-size: 15px;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+  .navbar a + a::before {
+    display: none;
+  }
+}
+
+/*
+  Extra small mobile (≤480px):
+  - Further reduce header and logo size
+  - Smaller navbar font
+*/
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 1vw;
+  }
+  .logo img {
+    height: 20vw;
+    max-height: 50px;
+  }
+  .navbar a {
+    font-size: 14px;
+  }
 }
