@@ -123,6 +123,94 @@ a {
   color: green;
 }
 
+/* Dropdown menu styles for Programs navigation */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: green;
+  font-size: 18px;
+  padding: 0 16px;
+  background: none;
+  border: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 220px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  z-index: 1000;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu a {
+  color: green;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: left;
+  white-space: nowrap;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #f0f8f0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+/* Dropdown arrow effect for Programs */
+.dropdown-toggle span {
+  transition: transform 0.2s;
+}
+
+/* Rotate arrow when dropdown is open (on hover/focus) */
+.dropdown:hover .dropdown-toggle span,
+.dropdown:focus-within .dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+/* Dropdown arrow effect for Programs (Font Awesome chevron-down) */
+.dropdown-toggle .fa-chevron-down {
+  transition: transform 0.2s, color 0.2s;
+}
+
+/* Rotate and color arrow when dropdown is open (on hover/focus) */
+.dropdown:hover .dropdown-toggle .fa-chevron-down,
+.dropdown:focus-within .dropdown-toggle .fa-chevron-down {
+  transform: rotate(180deg);
+  color: #006400;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  .dropdown-menu a {
+    padding: 10px 10px;
+    font-size: 15px;
+  }
+}
+
 /*
   Responsive styles for tablets (≤1024px):
   - Reduce header padding
