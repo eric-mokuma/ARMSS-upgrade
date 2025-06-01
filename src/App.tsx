@@ -1,56 +1,29 @@
-function App() {
+import './index.css'
+
+const App = () => {
+  // This is a simple React component that renders a header with a logo and navigation links.
+  // The header contains a logo and a navigation bar with several links.
   return (
-    <nav className="bg-white shadow-md px-6 py-3 flex items-center justify-between">
-      <div className="flex items-center">
+    <header className="header">
+      <a href="/images/favicon-square.png" className="logo">
         <img
           src="/images/favicon-square.png"
           alt="Logo"
-          className="h-8 w-auto object-contain mr-4"
+          style={{ height: '74px', width: 'auto', objectFit: 'contain' }}
         />
-      </div>
-      <ul className="flex space-x-6 text-gray-700 font-medium ml-auto">
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            News & Announcements
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Programs
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            The Team
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Testimonials
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Our Poem
-          </a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Contact Us
-          </a>
-        </li>
-      </ul>
-    </nav>
+      </a>
+
+      <nav className="navbar">
+        <a href="/">Home</a>
+        <a href="/">News & Announcements</a>
+        <a href="/">About us</a>
+        <a href="/">Programs</a>
+        <a href="/">The Team</a>
+        <a href="/">Testimonials</a>
+        <a href="/">Our Poem</a>
+        <a href="/">Contact Us</a>
+      </nav>
+    </header>
   )
 }
 
