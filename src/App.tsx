@@ -1,12 +1,6 @@
 import './index.css'
 import { useState } from 'react'
 
-// Import the Facebook icon image
-import fb from './assets/fb.png'
-import insta from './assets/insta.png'
-import linkedin from './assets/linkedin.png'
-import twitter from './assets/twitter.png'
-
 const App = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
@@ -97,11 +91,11 @@ const App = () => {
         </nav>
       </header>
       <footer>
-        <div className="footer-content">
+        <div className="footer">
           <div className="sb_footer section_padding">
             <div className="sb_footer-links">
-              <div className="sb_footer-links-div">
-                <h4>Aotearoa Refugee and Migrant Support Services (ARMSS)</h4>
+              <div className="sb_footer-links_div">
+                <h4>ARMSS</h4>
                 <a href="#" onClick={handleMenuClick}>
                   Family integration & Parenting
                 </a>
@@ -149,19 +143,39 @@ const App = () => {
                 <a href="#">Contact Us</a>
               </div>
               <div className="sb_footer-links_div">
-                <h4>Coming soon</h4>
-                <p>
-                  <img src={fb} alt=""></img>
-                </p>
-                <p>
-                  <img src={twitter} alt=""></img>
-                </p>
-                <p>
-                  <img src={linkedin} alt=""></img>
-                </p>
-                <p>
-                  <img src={insta} alt=""></img>
-                </p>
+                <h4>Social Media</h4>
+                <div className="bg-[#2d2b35] text-white flex flex-col items-center justify-center py-16">
+                  <div className="sb_footer-links_div flex gap-6">
+                    <a href="#">
+                      <i className="fab fa-facebook-f fa-lg"></i>
+                    </a>
+                    <a href="#">
+                      <i className="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#">
+                      <i
+                        className="fab fa-linkedin-in fa-lg"
+                        style={{
+                          color: '#0077b5',
+                          background: '#7c65ff',
+                          borderRadius: '50%',
+                          padding: '16px',
+                        }}
+                      ></i>
+                    </a>
+                    <a href="#">
+                      <i
+                        className="fab fa-instagram fa-lg"
+                        style={{
+                          color: '#e4405f',
+                          background: '#7c65ff',
+                          borderRadius: '50%',
+                          padding: '16px',
+                        }}
+                      ></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -170,6 +184,28 @@ const App = () => {
             <div className="sb_footer-copyright">
               @{new Date().getFullYear()} Aotearoa Refugee and Migrant Support
               Services (ARMSS). All rights reserved.
+            </div>
+            <div className="sb_footer-below-links">
+              <a href="#">
+                <div>
+                  <p>Terms & Conditions</p>
+                </div>
+              </a>
+              <a href="#">
+                <div>
+                  <p>Privacy</p>
+                </div>
+              </a>
+              <a href="#">
+                <div>
+                  <p>Security</p>
+                </div>
+              </a>
+              <a href="#">
+                <div>
+                  <p>Cookies Declaration</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
