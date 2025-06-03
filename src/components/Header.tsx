@@ -1,5 +1,5 @@
 import '../index.css'
-import '../style/header.css'
+import '../styles/Header.css' // Assuming you have a CSS file for styles
 import { useState } from 'react'
 
 const Header = () => {

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles below */
+.bodypartone-container {
+  width: 100%;
+  position: relative;
+}
+
+.bodypartone-bg {
+  background-image: url('/images/yeah.png');
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bodypartone-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.bodypartone-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: green;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 2s;
+  
+}
+
+.bodypartone-desc {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.bodypartone-greetings-band {
+  width: 100%;
+  background: black;
+  padding: 0.7rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.bodypartone-greetings-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+  color: #fff;
+  font-size:      2rem;
+  font-style: italic;
+}
+
+.bodypartone-greetings-fade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-style: italic;
+  animation: fadeIn 5s;
+}
+
+.greeting {
+  animation: fadeIn 2s;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%);}
+  100% { transform: translateX(-100%);}
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

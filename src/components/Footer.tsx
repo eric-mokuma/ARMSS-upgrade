@@ -1,5 +1,5 @@
 import '../index.css'
-import '../style/footer.css'
+import '../styles/footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faFacebook,
@@ -41,9 +41,9 @@ const Footer = () => (
             <a href="#">Our Poem</a>
             <a href="#">Contact Us</a>
           </div>
-          <div className="sb_footer-links_div">
+          <div>
             <h4>Social Media</h4>
-            <div className="socialmedia">
+            <div className="sb_footer-links_div social-icons">
               <a
                 href="#"
                 className="social-icon facebook"
